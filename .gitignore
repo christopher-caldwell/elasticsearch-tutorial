@@ -1,0 +1,16 @@
+# dependencies
+node_modules/
+/.pnp
+.pnp.js
+
+# Builds
+build/
+dist/
+.serverless/
+.webpack/
+.webpackCache/
+
+# misc
+.DS_Store
+.env.local
+.log*

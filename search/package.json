@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "ts-node index.ts"
+    "seed": "ts-node seed/index.ts",
+    "search": "ts-node src/index.ts"
   },
   "keywords": [],
   "author": "",
@@ -12,9 +13,12 @@
   "dependencies": {
     "@elastic/elasticsearch": "^7.12.0",
     "aws-elasticsearch-client": "^2.0.0",
-    "aws-sdk": "^2.893.0"
+    "aws-sdk": "^2.893.0",
+    "colors": "^1.4.0",
+    "serialize-error": "^8.1.0"
   },
   "devDependencies": {
+    "@types/serialize-error": "^4.0.1",
     "ts-node": "^9.1.1",
     "typescript": "^4.2.4"
   }

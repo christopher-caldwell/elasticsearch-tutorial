@@ -53,6 +53,11 @@ const characters: Character[] = [
     isAlive: false,
   },
   {
+    name: 'Tommen Baratheon',
+    house: 'Baratheon',
+    isAlive: false,
+  },
+  {
     name: 'Jaime Lannister',
     house: 'Lannister',
     isAlive: false,
@@ -152,6 +157,21 @@ const characters: Character[] = [
     house: 'Giantsbane',
     isAlive: true,
   },
+  {
+    name: 'Brienne of Tarth',
+    house: 'Tarth',
+    isAlive: true,
+  },
+  {
+    name: 'Ramsay Bolton',
+    house: 'Bolton',
+    isAlive: false,
+  },
+  {
+    name: 'Roose Bolton',
+    house: 'Bolton',
+    isAlive: false,
+  },
 ]
 
 const indexNode = async (character: Character) => {
@@ -168,15 +188,3 @@ const seed = async () => {
 }
 
 seed()
-
-// Brienne of Tarth		Recurring	Main
-// Ramsay Bolton		Recurring	Main
-// Gilly		Recurring	Main
-// Daario Naharis		Recurring[f]	Main
-// Missandei		Recurring	Main
-// Chapman	Tommen Baratheon	Recurring[g]		Recurring	Main
-// Ellaria Sand		Recurring	Main
-// Jaqen H'ghar	Body double	Recurring		Main
-// Roose Bolton		Recurring	Guest	Main
-// The High Sparrow		Recurring	Main
-// Grey Worm

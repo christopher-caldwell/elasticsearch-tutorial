@@ -6,12 +6,16 @@ import { index, SearchClient } from './constants'
 import { SearchResponse, Character, MatchQuery } from './interfaces'
 
 const search = async () => {
-  const searchParams: RequestParams.Search<MatchQuery<Character, 'house'>> = {
+  // This is specific to a match query. You can only have one key, and it must be inside the objects you are searching.
+  const searchParams: RequestParams.Search<MatchQuery<Character, 'name'>> = {
     index,
     body: {
       query: {
         match: {
-          house: 'Targaryen',
+          name: {
+            query: 'Star',
+            fuzziness: 'AUTO',
+          },
         },
       },
     },
@@ -20,12 +24,6 @@ const search = async () => {
   const results = result.body.hits.hits.map(hit => hit._source)
   console.log(results)
 }
-
-// {
-//   query: 'Targaryen',
-//   fuzziness: 'AUTO',
-// },
-// isAlive: true,
 
 const main = async () => {
   try {

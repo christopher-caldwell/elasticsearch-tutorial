@@ -14,6 +14,7 @@ export type House =
   | 'Giantsbane'
   | 'Bolton'
   | 'Lannister'
+  | 'Tarth'
 
 export interface Character {
   name: string

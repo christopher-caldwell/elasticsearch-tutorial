@@ -1,4 +1,4 @@
-/** Using the `match` operation for searching
+/** Using the `term` operation for searching
  * @link [Docs](https://www.elastic.co/guide/en/elasticsearch/reference/7.x/query-dsl-term-query.html)
  */
 export interface TermQueryOptions {

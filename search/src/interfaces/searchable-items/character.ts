@@ -1,23 +1,26 @@
-export type House =
-  | 'Baratheon'
-  | 'Stark'
-  | 'Mormont'
-  | 'Targaryen'
-  | 'Snow'
-  | 'Greyjoy'
-  | 'Clegane'
-  | 'Baelish'
-  | 'Seaworth'
-  | 'Tarly'
-  | 'No House'
-  | 'Tyrell'
-  | 'Giantsbane'
-  | 'Bolton'
-  | 'Lannister'
-  | 'Tarth'
-
 export interface Character {
+  titles: string[]
+  origins: string[]
+  siblings: string[]
+  spouses: string[]
+  lovers: string[]
+  cultures: string[]
+  religions: string[]
+  allegiances: string[]
+  seasons: string[]
+  appearances: string[]
   name: string
-  house: House | House[]
+  image: string
+  gender: string
   isAlive: boolean
+  deathYear: number
+  father: string
+  house: string
+  firstSeen: string
+  actor: string
+  related: {
+    name: string
+    mentions: number
+  }[]
+  age?: number
 }

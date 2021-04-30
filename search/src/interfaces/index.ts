@@ -1,4 +1,3 @@
-export * from './query-options/match'
-export * from './query-options/term'
+export * from './query-options'
 export * from './searchable-items'
 export * from './shared'

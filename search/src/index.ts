@@ -1,11 +1,11 @@
 import { red } from 'colors'
 import { serializeError } from 'serialize-error'
 
-import { termSearch } from './searches'
+import { matchSearch } from './searches'
 
 const main = async () => {
   try {
-    await termSearch()
+    await matchSearch()
   } catch (error) {
     const serializedError = serializeError(error)
     console.error(red('Error searching:'), serializedError)

@@ -1,3 +1,5 @@
+import { QueryConfig } from './shared'
+
 /** Using the `range` operation for searching
  * @link [Docs](https://www.elastic.co/guide/en/elasticsearch/reference/current/query-dsl-range-query.html)
  */
@@ -47,13 +49,5 @@ export interface RangeQueryOptions {
  * @link [Docs](https://www.elastic.co/guide/en/elasticsearch/reference/current/query-dsl-range-query.html)
  */
 export type RangeQuery<ResultType, KeyOfSearchedProperty extends keyof ResultType> = {
-  query: {
-    /** You can only declare a single property of the partial here. Adding more than one will cause a runtime error */
-    range: Pick<
-      {
-        [key in keyof ResultType]: ResultType[key] | RangeQueryOptions
-      },
-      KeyOfSearchedProperty
-    >
-  }
+  range: QueryConfig<ResultType, KeyOfSearchedProperty, RangeQueryOptions>
 }

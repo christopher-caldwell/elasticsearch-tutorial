@@ -1,3 +1,5 @@
+import { QueryConfig } from './shared'
+
 export type Fuzziness = 'AUTO' | '1' | '2'
 
 /** Using the `match` operation for searching
@@ -62,13 +64,6 @@ The match query is the standard query for performing a full-text search, includi
 * @link [Docs](https://www.elastic.co/guide/en/elasticsearch/reference/7.x/query-dsl-match-query.html)
 */
 export type MatchQuery<ResultType, KeyOfSearchedProperty extends keyof ResultType> = {
-  query: {
-    /** You can only declare a single property of the partial here. Adding more than one will cause a runtime error */
-    match: Pick<
-      {
-        [key in keyof ResultType]: ResultType[key] | MatchQueryOptions
-      },
-      KeyOfSearchedProperty
-    >
-  }
+  /** You can only declare a single property of the partial here. Adding more than one will cause a runtime error */
+  match: QueryConfig<ResultType, KeyOfSearchedProperty, MatchQueryOptions>
 }

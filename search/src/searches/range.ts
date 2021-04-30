@@ -1,10 +1,10 @@
 import { RequestParams } from '@elastic/elasticsearch'
 
 import { characterIndex, SearchClient } from '../constants'
-import { SearchResponse, Character, RangeQuery } from '../interfaces'
+import { SearchResponse, Character, Query, RangeQuery } from '../interfaces'
 
 export const rangeSearch = async () => {
-  const searchParams: RequestParams.Search<RangeQuery<Character, 'seasons'>> = {
+  const searchParams: RequestParams.Search<Query<RangeQuery<Character, 'seasons'>>> = {
     index: characterIndex,
     body: {
       query: {

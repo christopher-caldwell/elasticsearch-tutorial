@@ -37,3 +37,5 @@ export interface SearchResponse<T> {
   }
   aggregations?: any
 }
+
+export * from './query-options/shared'

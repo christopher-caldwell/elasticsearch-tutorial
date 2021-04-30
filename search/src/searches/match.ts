@@ -1,11 +1,11 @@
 import { RequestParams } from '@elastic/elasticsearch'
 
 import { characterIndex, SearchClient } from '../constants'
-import { SearchResponse, Character, MatchQuery } from '../interfaces'
+import { SearchResponse, Character, Query, MatchQuery } from '../interfaces'
 
 export const matchSearch = async () => {
   // This is specific to a match query. You can only have one key, and it must be inside the objects you are searching.
-  const searchParams: RequestParams.Search<MatchQuery<Character, 'father'>> = {
+  const searchParams: RequestParams.Search<Query<MatchQuery<Character, 'father'>>> = {
     index: characterIndex,
     body: {
       query: {

@@ -1,3 +1,5 @@
+import { QueryConfig } from './shared'
+
 /** Using the `term` operation for searching
  * @link [Docs](https://www.elastic.co/guide/en/elasticsearch/reference/7.x/query-dsl-term-query.html)
  */
@@ -32,13 +34,6 @@ export interface TermQueryOptions {
  * @link [Docs](https://www.elastic.co/guide/en/elasticsearch/reference/7.x/query-dsl-term-query.html)
  */
 export type TermQuery<ResultType, KeyOfSearchedProperty extends keyof ResultType> = {
-  query: {
-    /** You can only declare a single property of the partial here. Adding more than one will cause a runtime error */
-    term: Pick<
-      {
-        [key in keyof ResultType]: ResultType[key] | TermQueryOptions
-      },
-      KeyOfSearchedProperty
-    >
-  }
+  /** You can only declare a single property of the partial here. Adding more than one will cause a runtime error */
+  term: QueryConfig<ResultType, KeyOfSearchedProperty, TermQueryOptions>
 }

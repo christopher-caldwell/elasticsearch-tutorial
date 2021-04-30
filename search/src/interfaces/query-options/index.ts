@@ -1,3 +1,6 @@
 export * from './match'
 export * from './term'
 export * from './range'
+export * from './prefix'
+export * from './boolean'
+export * from './exists'

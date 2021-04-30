@@ -1,9 +1,7 @@
-export type Fuzziness = 'AUTO' | '1' | '2'
-
 /** Using the `match` operation for searching
- * @link [Docs](https://www.elastic.co/guide/en/elasticsearch/reference/7.x/query-dsl-match-query.html)
+ * @link [Docs](https://www.elastic.co/guide/en/elasticsearch/reference/7.x/query-dsl-term-query.html)
  */
-export interface MatchQueryOptions {
+export interface TermQueryOptions {
   value: string
   /** Floating point number used to decrease or increase the relevance scores of a query.
    *
@@ -38,7 +36,7 @@ export type TermQuery<ResultType, KeyOfSearchedProperty extends keyof ResultType
     /** You can only declare a single property of the partial here. Adding more than one will cause a runtime error */
     term: Pick<
       {
-        [key in keyof ResultType]: ResultType[key] | MatchQueryOptions
+        [key in keyof ResultType]: ResultType[key] | TermQueryOptions
       },
       KeyOfSearchedProperty
     >

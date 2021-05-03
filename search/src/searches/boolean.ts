@@ -6,9 +6,7 @@ import { SearchResponse, Character, Query, BooleanQuery, MatchQuery } from '../i
 /** Queries for all children of Stark, or if the character is male */
 export const booleanSearch = async () => {
   // This is specific to a match query. You can only have one key, and it must be inside the objects you are searching.
-  const searchParams: RequestParams.Search<
-    Query<BooleanQuery<MatchQuery<Character, 'father'> | MatchQuery<Character, 'gender'>>>
-  > = {
+  const searchParams: RequestParams.Search<Query<BooleanQuery<QueriesAllowedInShould>>> = {
     index: characterIndex,
     body: {
       query: {
@@ -37,3 +35,5 @@ export const booleanSearch = async () => {
   const results = result.body.hits.hits.map(hit => hit._source)
   console.log(results)
 }
+
+type QueriesAllowedInShould = MatchQuery<Character, 'father'> | MatchQuery<Character, 'gender'>
